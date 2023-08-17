@@ -14,17 +14,17 @@
 <style>
 @font-face {
   font-family: Centra;
-  src: url('./assets/CentraNo2-Bold.ttf');
+  src: url('../assets/CentraNo2-Bold.ttf');
   font-weight: 700;
 }
 @font-face {
   font-family: Centra;
-  src: url('./assets/CentraNo2-Medium.ttf');
+  src: url('../assets/CentraNo2-Medium.ttf');
   font-weight: 500;
 }
 @font-face {
   font-family: Centra;
-  src: url('./assets/CentraNo2-Book.ttf');
+  src: url('../assets/CentraNo2-Book.ttf');
   font-weight: 400;
 }
 

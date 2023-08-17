@@ -3,7 +3,7 @@
     <div class="container">
       <div class="content">
         <span class="tagline">Welcome to my Portfolio</span>
-        <h1>Bienvenue, moi c'est Emilien ! <span class="txt-rotate"><span class="wrap">{{ this.text }}</span></span>
+        <h1>Bienvenue, moi c'est Emilien ! <br><span class="txt-rotate"><span class="wrap">{{ this.text }}</span></span>
         </h1>
         <p>Je m'appelle Emilien PAUL, j'ai 20 ans. Je suis actuellement en licence <a
             href="http://pasteurmontroland.com/formation/27/description?page=5" target="_blank"
@@ -23,7 +23,7 @@ export default defineComponent({
       intervalId: 0 as number,
       toRotate: [ "Développeur Web", "Développeur Full Stack"] as String[],
       period: 2000 as number,
-      delta: 300 - Math.random() * 100 as number,
+      delta: 200 - Math.random() * 100 as number,
       loopNum: 0 as number,
       isDeleting: false as boolean,
       text: "" as string,

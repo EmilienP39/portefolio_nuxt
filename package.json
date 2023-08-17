@@ -14,6 +14,7 @@
     "nuxt": "^3.6.2"
   },
   "dependencies": {
-    "nuxt-property-decorator": "^2.9.1"
+    "nuxt-property-decorator": "^2.9.1",
+    "vue3-carousel": "^0.3.1"
   }
 }
