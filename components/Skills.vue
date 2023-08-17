@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div id="skills">
     <div class="container">
       <div class="skill-box">
-        <carousel :items-to-show="3" snapAlign="center" class="carousel">
+        <carousel :items-to-show="this.nb_itmes" snapAlign="center" class="carousel">
           <slide v-for="(item, index) in items" :key="index" class="carousel-item">
             <div class="circular-progress" :class="'circular-' + item.pourcentage">
               <div class="progress-value" v-if="item.nom !=='Anglais'">
@@ -35,9 +35,10 @@
 <script lang="ts">
 import 'vue3-carousel/dist/carousel.css'
 import {Carousel, Slide, Navigation} from 'vue3-carousel'
+import { ref } from 'vue'
 
 
-export default {
+export default defineComponent({
   components: {
     Carousel,
     Slide,
@@ -66,10 +67,16 @@ export default {
           pourcentage: "60" as string,
           nom: "SQL" as string
         }
-      ]
+      ],
+      nb_itmes: 3 as number
+    }
+  },
+  mounted() {
+    if(ref(screen.width).value <= 500){
+      this.nb_itmes = 1;
     }
   }
-}
+})
 </script>
 
 <style>

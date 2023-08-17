@@ -1,12 +1,12 @@
 <template>
   <nav class="navbar">
     <div class="container">
-      <a class="navbar-brand"><img src="assets/odina2.png"> </a>
       <div class="navbar-collapse">
         <div class="ms-auto navbar-nav">
           <a href="#" :class="this.activeLink === 'home' ? 'active navbar-link' : 'navbar-link'"> home </a>
-          <a href="#" :class="this.activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'"> skills </a>
-          <a href="#" :class="this.activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'"> project </a>
+          <a href="#skills" :class="this.activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'" @click="this.activeLink = 'skills'"> skills </a>
+          <a href="#projects" :class="this.activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'" @click="this.activeLink = 'projects'"> project </a>
+          <a>linkedIn</a>
         </div>
       </div>
     </div>
