@@ -1,5 +1,6 @@
 <template>
   <div id="skills">
+    <p class="text-info"><b>Au cours de ma formation et des mes différentes expériences, j'ai pu acquérir différentes compétences</b></p>
     <div class="container">
       <div class="skill-box">
         <carousel :items-to-show="this.nb_itmes" snapAlign="center" class="carousel">
@@ -52,6 +53,10 @@ export default defineComponent({
           nom: "VueJS (typescript)" as string
         },
         {
+          pourcentage: "70" as string,
+          nom: "Nuxt3" as string
+        },
+        {
           pourcentage: "80" as string,
           nom: "Symfony" as string
         },
@@ -66,6 +71,10 @@ export default defineComponent({
         {
           pourcentage: "60" as string,
           nom: "SQL" as string
+        },
+        {
+          pourcentage:"50" as string,
+          nom: "Ansible" as string
         }
       ],
       nb_itmes: 3 as number
@@ -80,9 +89,18 @@ export default defineComponent({
 </script>
 
 <style>
+.text-info{
+  position:relative;
+  top:-10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
 .carousel-item {
   display: flex;
-  padding: 0 20px;
+  justify-content:center ;
+  padding: 0 5px;
   flex-direction: column;
   text-align: center;
   border-radius: 5px;
@@ -151,6 +169,7 @@ export default defineComponent({
   bottom: 0;
   width: 40%;
   z-index: -4;
+  max-height: 400px;
 }
 
 .progress-value {

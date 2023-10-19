@@ -5,11 +5,11 @@
         <span class="tagline">Welcome to my Portfolio</span>
         <h1>Bienvenue, moi c'est Emilien ! <br><span class="txt-rotate"><span class="wrap">{{ this.text }}</span></span>
         </h1>
-        <p>Je m'appelle Emilien PAUL, j'ai 20 ans. Je suis actuellement en licence <a
+        <p>Je m'appelle Emilien PAUL, j'ai 21 ans. Je suis actuellement en licence <a
             href="http://pasteurmontroland.com/formation/27/description?page=5" target="_blank"
             rel="noopener noreferrer">CAISI</a> au Lycée Pasteur Mont-Roland à Dole. A côté de ça, je suis alternant au
           collège Notre Dame de Mont-Roland toujours à Dole. En développement, j'utilise majoriterment <b>VueJS</b> avec
-          <b>Typescript</b> en technologie front-end et <b>Symfony</b> pour le back-end.
+          <b>Typescript</b> et <b>Nuxt3</b> en technologie front-end et <b>Symfony</b> pour le back-end.
         </p>
       </div>
     </div>
@@ -142,5 +142,12 @@ export default defineComponent({
 
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
+}
+
+//responsive mobile phone
+@media screen and (max-width: 500px) {
+  .banner h1 {
+    width: 300px;
+  }
 }
 </style>

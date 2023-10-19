@@ -4,13 +4,16 @@
     <p>I show you to all the big and small websites I have done so far</p>
     <div class="projects-box">
       <div class="proj-imgbx" v-for="project in this.projects" @click="this.focusProject(project)" :class="isFocusVisible && this.projectFocus.id === project.id ? 'animation' : 'info-project'">
-        <img src="assets/MSI.png"/>
+        <div v-if="!isFocusVisible" class="proj-info">{{project.type}}</div>
+        <div v-if="!project.isFini && !isFocusVisible" class="proj-status">En développement</div>
+        <img :src="project.image" v-if="project.demoType === 'img'"/>
+        <video v-if="project.demoType === 'video'" :src="project.image" type="video/mp4" autoplay loop/>
         <div class="proj-txtx">
           <h4>{{project.nom}}</h4>
           <span>{{project.description}}</span>
         </div>
         <div class="proj-imgbx">
-          <img :src="project.image"/>
+
         </div>
       </div>
     </div>
@@ -32,13 +35,19 @@ export default defineComponent({
           id:1,
           nom:"MSI",
           description:"MSI est un outil de gestion de ticket interne fait avec VueJS typescript et Symfony. Chaque ticket est créé automatiquement à partir des mails que l'on reçoit.",
-          image:"assets/MSI.png"
+          image:"assets/MSI.png",
+          type:"Pro",
+          isFini:true,
+          demoType:"img"
         } as Project,
         {
           id:2,
-          nom:"TEST",
-          description: "fdsfdsfs",
-          image:"assets/MSI.png"
+          nom:"Tarot",
+          description: "Le projet Tarot est le projet d'une amie en master de design qui, pour son mémoire, à fait des cartes de tarot sur le thème de la mythologie grec. Chaque carte renvoie via une puce NFC à un site web développé en Nuxt3 et Symfony permettant d'avoir plus d'information sur la carte",
+          image:"assets/tarot-demo.mp4",
+          type:"Perso",
+          isFini:false,
+          demoType:"video"
         } as Project
       ] as Project[],
       projectFocus: {} as Project,
@@ -86,6 +95,11 @@ project {
   justify-content: left;
 
 }
+video{
+  object-fit: contain;
+  width: 400px;
+  max-height: 200px;
+}
 .proj-imgbx {
   position: relative;
   border-radius: 30px;
@@ -96,6 +110,29 @@ project {
   transition: transform .2s ease-out;
   cursor:pointer;
 }
+
+.proj-info{
+  position: absolute;
+  top: 15px;
+  left: -35px;
+  background: linear-gradient(90.21deg,#6F9CEB -5.91%,#5730B4 111.58%);
+  width:120px;
+  text-align: center;
+  transform: rotate(-45deg);
+  font-size: 20px;
+}
+
+.proj-status{
+  position: absolute;
+  top: 25px;
+  right: -40px;
+  background: linear-gradient(90.21deg, #fadd49 -5.91%, #fab449 111.58%);
+  width:220px;
+  text-align: center;
+  transform: rotate(25deg);
+  font-size: 15px;
+}
+
 .info-project::before {
   content: "";
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
@@ -135,12 +172,13 @@ project {
   letter-spacing: 0.8px;
 }
 .background-image-right {
-  top: 80%;
+  top: 60%;
   position: absolute;
   bottom: 0;
   width: 35%;
   right: 0;
   z-index: -4;
+  max-height: 400px;
 }
 .animation{
   position: fixed;
